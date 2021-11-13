@@ -1,0 +1,47 @@
+.box{
+border-radius: 1px 0px 82px 82px;
+-moz-border-radius: 102px 82px 82px 82px;
+-webkit-border-radius: 0px 0px 0px 0px;
+border: 3px solid #2C3E50;
+color:#fff;
+margin-left:5px;
+margin-right:5px;
+margin-bottom:10px;
+width: 65px;
+background-color: #2C3E50;
+}
+
+.sinbordes1{
+margin-left:5px;
+background-color: #2C3E50;
+border: 0;
+}
+.sinbordes2{
+margin-left:10px;
+background-color: #2C3E50;
+border: 0;
+}
+.sinbordes3{
+margin-left:15px;
+background-color: #2C3E50;
+border: 0;
+}
+.sinbordes{
+margin-left:5px;
+border: 0;
+}
+.clase_canvas{
+	position: block;
+	
+}
+
+.prueba{
+	position: absolute;
+}
+
+.ejemplo{
+	margin-top: 600px;
+}
+.errorI{
+	color:#ff001f;
+}

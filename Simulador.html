@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8"/>
+	<title>Disco</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+	<link href="plugins/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="plugins/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="plugins/style.css" rel="stylesheet" type="text/css"/>
+	<link href="plugins/toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
+	<style type="text/css">
+		.toast {
+			opacity: 1 !important;
+		}
+	</style>
+</head>	
+<body>
+	<div class="topbar navbar-fixed-top">
+		<a class="topbar-logo" href="Simulador.html">
+			<img src="plugins/img/logo2.png" alt="Logo">
+		</a>
+		<a class="topbar-link" data-hint="tooltip" data-original-title="Keenthemes Developer Blog" data-placement="bottom" href="Simulador.html" role="button">Simulador</a>
+		<span class="topbar-sep"></span>
+		<a class="topbar-link" data-hint="tooltip" data-original-title="Keenthemes Developer Blog" data-placement="bottom" href="busquedas.html" role="button">Busquedas</a>
+		<span class="topbar-sep"></span>
+	</div>
+
+	<div class="banner">
+		<div class="container">
+			<div class="col-md-6">	
+				<form method="post" class="form-horizontal" id="form_pet">
+					<div class="form-group">
+						<label class="col-md-4 control-label">N° inicial</label>
+						<div class="col-md-8">	
+							<div class="input-group col-md-12">
+								<input type="text" class="form-control" id="txtResultado" name="digits" pattern="[0-9]" maxlength="6"></div>
+							</div>
+							<div id="spanError"></div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Algoritmo</label>
+							<div class="col-md-8">                                        
+								<select class="form-control select" onchange="selectAlgoritmo();" id="selectOpt">
+									<option value="FCFS" selected="selected">FCFS</option>
+									<option value="SSTF">SSTF</option>
+									<option value="SCAN">SCAN</option>
+									<option value="C-SCAN">C-SCAN</option>
+									<option value="C-LOOK">C-LOOK</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-4 control-label">Límite superior</label>
+							<div class="col-md-8">                                        
+								<select class="form-control select" onchange="cambiar();" id="limite">
+									<option value="" selected="selected" disabled>Seleccione un opción</option>
+									<option value="calculado">Calculado</option>
+									<option value="manual">Manual</option>
+								</select>
+							</div>
+						</div>
+
+						<div id="conDatos" hidden="true">
+							<div class="form-group">
+								<label class="col-md-4 control-label">Platos</label>
+								<div class="col-md-8">
+									<div class="input-group">
+										<input type="number" min="1" class="form-control" id="txtPlatos" name="txtPlatos" value="" required>
+										<span class="input-group-btn"></span>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Cilindros</label>
+								<div class="col-md-8">
+									<div class="input-group">
+										<input type="number" min="1" class="form-control" id="txtCilindros" name="txtCilindros" value="" required>
+										<span class="input-group-btn"></span>
+									</div>						  
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-lg-4 control-label">Sectores por pista</label>
+								<div class="col-md-8">			
+									<div class="input-group">				   
+										<input type="number" min="1" class="form-control" id="txtSectXPista" name="txtSectXPista" required>		
+										<span class="input-group-btn"></span>
+									</div>						   
+								</div>
+							</div>
+						</div>
+
+						<div id="manual" hidden="true">
+							<div class="form-group">
+								<label class="col-lg-4 control-label">Límite Superior</label>
+								<div class="col-md-8">			
+									<div class="input-group">				   
+										<input type="number" min="1" class="form-control" id="txtLimite" name="txtLimite" required>		
+										<span class="input-group-btn"></span>
+									</div>						   
+								</div>
+							</div>
+						</div>					 
+
+						<div class="form-group">
+							<label class="col-lg-4 control-label">Peticiones</label>	
+							<div class="col-md-8">	
+								<div class="input-group ">				   
+									<input type="text" class="form-control" id="txtValor" name="digits" required  pattern="[0-9]">		
+									<span class="input-group-btn">
+										<input type="button"  onclick="validar();" value="Go" class="btn btn-primary" id="btnGo">
+									</span>
+
+								</div>
+								<div id="spanError2"></div>
+							</div>
+						</div>
+
+						<input type="button" value="Realizar nuevo cálculo" onClick="location.reload();" style="width: 200px; height: 30px; background: #6699FF; color: #ffffff; cursor: pointer; border: 0px;"/>
+						
+						
+					</form>
+				</div>
+				<div class="col-md-6">
+					<div class="pull-right">
+						<div class="btn-group">
+							<button class="btn btn-default "onclick="mover()" id="btnPlay"><span class="fa fa-play"></span>   Play</button>
+							<button class="btn btn-default"onclick="detener()" ><span class="fa fa-stop"></span>   Stop</button><br><br>
+						</div>   
+					</div><br><br>
+
+					<div class="clase_canvas">
+						<canvas id="disco" width="600" height="400" class="prueba"></canvas>
+						<canvas id="disco_disco" class="prueba" width="400" height="400">
+							Tu navegador no soporta canvas
+						</canvas>
+						<canvas id="disco_aguja" class="prueba" width="400" height="400">
+							Tu navegador no soporta canvas
+						</canvas>
+					</div>
+
+
+				</div>
+				<br><br><br><br><br><br><br><br>  <br><br><br><br><br><br><br><br>		  
+				<div class="col-md-12">
+					<div id="caja">					  
+
+					</div>
+				</div><br>
+			</div>
+
+		</div>
+
+
+		<div class="widget-banner">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 margin-bottom-30">
+						<div class="widget-body">
+							<div class="widget-layout">
+								<h3 class="widget-title" id="agregarSpan">Algoritmo <span class="widget-subtitle" id="span" name="span">FCFS</span></h3>
+								<div class="panel panel-default" id="tabla">
+									
+									
+									<table class="table table-bordered" id="idTable">
+										<thead>
+											<tr >
+												<th>Peticion</th>
+												<th>Resultado</th>
+
+											</tr>
+										</thead>
+										<tbody id="idTbody">
+										</tbody>
+
+									</table>                                
+
+								</div>
+							</div>
+							<br>
+						</div>
+					</div>
+					<div class="col-md-6 margin-bottom-30">
+						<div class="widget-body">
+							<div class="widget-layout">
+								<h3 class="widget-title">Maps- <span class="widget-subtitle">Grafico de peticiones</span></h3>
+								<div class="page-wrapper">
+									<div class="row">
+										<div class="col-md-12">
+											<!-- BEGIN CHART PORTLET-->
+											<div class="portlet light bordered">
+												<div class="portlet-body">
+													<div id="chartdiv" class="chart" style="height: 400px;"> </div>
+												</div>
+											</div>
+											<!-- END CHART PORTLET-->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div></div>
+					</div>	</div></div>
+					<div class="modal" id="modal_basic" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+									<h4 class="modal-title" id="defModalHead">Error de datos!!! campos vacios</h4>
+								</div>
+								<div class="modal-body">
+									Por favor ingrese datos validos
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- BEGIN CORE PLUGINS -->
+
+					<script src="plugins/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+					<script src="plugins/js/bootstrap.min.js" type="text/javascript"></script>
+					<!-- Grafico -->
+					<script src="plugins/js/amcharts.js" type="text/javascript"></script>
+					<script src="plugins/js/serial.js" type="text/javascript"></script>       
+					<script src="plugins/js/light.js" type="text/javascript"></script>
+					<script src="plugins/js/app.min.js" type="text/javascript"></script>
+					<script src="plugins/js/charts-amcharts.js" type="text/javascript"></script>
+					<!-- Validaciones -->
+					<script type='text/javascript' src="plugins/js/jquery.validate.modificado.js"></script>
+					<script type="text/javascript">
+
+						var form1 = $('#form_pet');
+						var error1 = $('.alert-danger', form1);
+						var success1 = $('.alert-success', form1);
+
+						var jvalidate = $("#form_pet").validate({
+
+				errorElement: 'span', //default input error message container
+				errorClass: 'help-block help-block-error', // default input error message class
+				focusInvalid: false, // do not focus the last invalid input
+				ignore: [],
+				
+				rules: {
+					digits: {
+						required: true,
+						digits: true,
+						max: 999999,
+						min: 0,
+						minlength: 0,
+						maxlength: 6
+					}
+				},
+				invalidHandler: function (event, validator) { //display error alert on form submit              
+					success1.hide();
+					error1.show();
+					App.scrollTo(error1, -200);
+				},
+
+                errorPlacement: function (error, element) { // render error placement for each input type
+                	var cont = $(element).parent('.input-group');
+                	if (cont) {
+                		cont.after(error);
+                	} else {
+                		error.insertAfter(element);
+                	}
+                	var cont2 = $(element).parent('.inpu');
+                	if (cont) {
+                		cont.after(error);
+                	} else {
+                		error.insertAfter(element);
+                	}
+                },
+
+
+                highlight: function (element) { // hightlight error inputs
+
+                	$(element)
+                        .closest('.form-group').addClass('has-error'); // set error class to the control group
+                    },
+
+                unhighlight: function (element) { // revert the change done by hightlight
+                	$(element)
+                        .closest('.form-group').removeClass('has-error'); // set error class to the control group
+                    },
+
+                    success: function (label) {
+                    	label
+                        .closest('.form-group').removeClass('has-error'); // set success class to the control group
+                    },
+
+
+                });
+
+            </script>
+            <!-- Animacion -->
+            <script src="plugins/js/algoritmos.js" type="text/javascript"></script>
+            <!-- toast-->
+            <script src="plugins/toastr/toastr.min.js" type="text/javascript"></script>
+            <script src="plugins/toastr/config.js" type="text/javascript"></script>
+        </body>
+        </html>

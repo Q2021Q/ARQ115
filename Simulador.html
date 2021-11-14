@@ -43,13 +43,18 @@
 
 			<div class="col-md-12 margin-bottom-30">	
 				<div class="widget-body">
+
 				<form method="post" class="form-horizontal" id="form_pet">
+
 					<div class="form-group">
 						<br>
+
 						<label class="col-md-2 control-label">N° inicial</label>
+
 						<div class="col-md-8">	
 							<div class="input-group col-md-6">
 								<input type="text" class="form-control" id="txtResultado" name="digits" pattern="[0-9]" maxlength="6"></div>
+
 							</div>
 							<div id="spanError"></div>
 						</div>
@@ -65,7 +70,9 @@
 									<option value="C-LOOK">C-LOOK</option>
 								</select>
 							</div>
+
 						</div>
+
 						<div class="form-group">
 							<label class="col-md-2 control-label">Límite superior</label>
 							<div class="col-md-4">                                        
@@ -74,7 +81,9 @@
 									<option value="calculado">Calculado</option>
 									<option value="manual">Manual</option>
 								</select>
+
 							</div>
+							<input type="button" class="btn btn-success" value="INGRESAR NUEVO CALCULO" onClick="location.reload();"/>
 						</div>
 
 						<div id="conDatos" hidden="true">
@@ -94,7 +103,7 @@
 										<input type="number" min="1" class="form-control" id="txtCilindros" name="txtCilindros" value="" required>
 										<span class="input-group-btn"></span>
 
-										
+
 
 									</div>						  
 								</div>
@@ -130,7 +139,7 @@
 								<div class="input-group ">				   
 									<input type="text" class="form-control" id="txtValor" name="digits" required  pattern="[0-9]">		
 									<span class="input-group-btn">
-										<input type="button"  onclick="validar();" value="Go" class="btn btn-success" id="btnGo">
+										<input type="button"  onclick="validar();" value="GO" class="btn btn-success" id="btnGo">
 									</span>
 
 								</div>
@@ -138,7 +147,7 @@
 							</div>
 						</div>
 
-						<input type="button" class="btn btn-success" value="Realizar nuevo cálculo" onClick="location.reload();"/>
+						
 						
 						
 					</form>

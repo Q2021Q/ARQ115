@@ -36,7 +36,7 @@
 	</div>
 
 
-
+<br><br>
 <div class="widget-banner ">		
 		<div class="container">
 
@@ -45,7 +45,8 @@
 				<div class="widget-body">
 				<form method="post" class="form-horizontal" id="form_pet">
 					<div class="form-group">
-						<label class="col-md-4 control-label">N° inicial</label>
+						<br>
+						<label class="col-md-2 control-label">N° inicial</label>
 						<div class="col-md-8">	
 							<div class="input-group col-md-6">
 								<input type="text" class="form-control" id="txtResultado" name="digits" pattern="[0-9]" maxlength="6"></div>
@@ -54,8 +55,8 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Algoritmo</label>
-							<div class="col-md-8">                                        
+							<label class="col-md-2 control-label">Algoritmo</label>
+							<div class="col-md-4">                                        
 								<select class="form-control select" onchange="selectAlgoritmo();" id="selectOpt">
 									<option value="FCFS" selected="selected">FCFS</option>
 									<option value="SSTF">SSTF</option>
@@ -66,8 +67,8 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-4 control-label">Límite superior</label>
-							<div class="col-md-8">                                        
+							<label class="col-md-2 control-label">Límite superior</label>
+							<div class="col-md-4">                                        
 								<select class="form-control select" onchange="cambiar();" id="limite">
 									<option value="" selected="selected" disabled>Seleccione un opción</option>
 									<option value="calculado">Calculado</option>
@@ -92,6 +93,9 @@
 									<div class="input-group">
 										<input type="number" min="1" class="form-control" id="txtCilindros" name="txtCilindros" value="" required>
 										<span class="input-group-btn"></span>
+
+										
+
 									</div>						  
 								</div>
 							</div>
@@ -112,15 +116,17 @@
 								<div class="col-md-8">			
 									<div class="input-group">				   
 										<input type="number" min="1" class="form-control" id="txtLimite" name="txtLimite" required>		
+
 										<span class="input-group-btn"></span>
 									</div>						   
 								</div>
+
 							</div>
 						</div>					 
 
 						<div class="form-group">
-							<label class="col-lg-4 control-label">Peticiones</label>	
-							<div class="col-md-8">	
+							<label class="col-lg-2 control-label">Peticiones</label>	
+							<div class="col-md-4">	
 								<div class="input-group ">				   
 									<input type="text" class="form-control" id="txtValor" name="digits" required  pattern="[0-9]">		
 									<span class="input-group-btn">
@@ -142,7 +148,7 @@
 					<div id="caja">					  
 
 					</div>
-				</div><br>
+				</div><br><br>
 			</div>		
 		</div>
 

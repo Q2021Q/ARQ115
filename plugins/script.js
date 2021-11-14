@@ -109,7 +109,7 @@ function tiempoTotalBusq(){
 
 		//alert("Tiempo de Sectores: "+tiempoDeSec);
 		document.getElementById("tiempoRotacional4").innerHTML = 'Tiempo de sectores es: '+tiempoDeSec+' ms';
-		var tiempoTotBusq = tiempoDeSec+tiempoDeCil;
+		var tiempoTotBusq = (tiempoDeSec + (difCilindros * tiempoBusq));
 		//alert("Tiempo Total: "+tiempoTotBusq);
 		document.getElementById("tiempoRotacional5").innerHTML = '<h3>Tiempo total de búsqueda: '+tiempoTotBusq+' ms</h3>';
 	}//fin else

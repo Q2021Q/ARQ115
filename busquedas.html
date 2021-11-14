@@ -32,24 +32,24 @@
 </head>
 
 <body>
-	<div class="topbar navbar-fixed-top">
-		<a class="topbar-logo" target="_blank" href="http://www.keenthemes.com">
-			<img src="plugins/img/logo2.png" alt="Logo">
-		</a>
 
-		
-		<a class="topbar-link" data-hint="tooltip" data-original-title="Theme Documentation" data-placement="bottom" href="Simulador.html" role="button">Simulador</a>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
+	    <a href="#" class="navbar-brand order-md-last "></a>
 
-		<span class="topbar-sep"></span>
+	  <div class="navbar-collapse collapse" id="mainNav">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item homeLink">
+	      </li>
+	      <li class="nav-item active">
+	      	  <a class="navbar-brand" href="Simulador.html">PLANIFICAICON</a>
 
-		<a class="topbar-link" data-hint="tooltip" data-original-title="Keenthemes Developer Blog" data-placement="bottom" href="busquedas.html" role="button">Busquedas</a>
+	      
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
 
-		<span class="topbar-sep"></span>
 
-
-
-
-	</div>
 
 	<div class="banner">
 		<div class="container">
@@ -144,32 +144,56 @@
 			</div>
 		</div>		
 
+<br>
 
-<div class="container">
+		<div class="container">
+			<div class="col-md-5">
+				<table class="table">
+				    <thead class="table-dark table table-sm">
+				        <tr>
+				            <th scope="col">Resultado</th>
+				            <th scope="col">Valor Obtenido</th>
+				            
+				        </tr>
+				    </thead>
+				    <tbody>
+				        <tr>
+				            <td>Tiempo rotacional</td>
+				            <td><label class="control-label" id="tiempoRotacional"></label></td>
+				           
+				        </tr>
+				        <tr>
+				            <td>Tiempo de cilindro</td>
+				            <td><label class="control-label" id="tiempoRotacional2"></label></td>
+				        </tr>
+				        <tr>
+				            <td>Sectores recorridos</td>
+				            <td><label class="control-label" id="tiempoRotacional3"></label></td>
+				            
+				        </tr>
+				          <tr>
+				            <td>Tiempo de sectores</td>
+				            <td><label class="control-label" id="tiempoRotacional4"></label></td>
+				            
+				        </tr>
+
+				    <tfoot class="table-dark">
+				        <tr>
+				            <td colspan="1"><strong>Tiempo total de busqueda</strong></td>
+				            <td class="text-right"><strong><label class="control-label" id="tiempoRotacional5"></strong></td>
+				        </tr>
+				    </tfoot>
+				</table>
+			</div>		
+		</div>		
+<br>
+<br>
+<div class="container ">
 			<div class="row">
 				<div class="col-md-4">
 
-					<div class="col-md-6">
-							
-								
-
-								<div class="datos"><h1><i>Resultados</i></h1><hr><br>
-									<div class="form-group" id="tiempoRotacionalX">
-										<label class="control-label" id="tiempoRotacional"></label><br>
-
-										<label class="control-label" id="tiempoRotacional2"></label><br>
-										<label class="control-label" id="tiempoRotacional3"></label><br>
-										<label class="control-label" id="tiempoRotacional4"></label><br>
-										<label class="control-label" id="tiempoRotacional5"></label><br>
-
-										
-									</div>
-								</div>
-							</div>
-
 					<div class="container">
 						<table class="table table-striped">
-							<caption><b><i>Tabla de datos</i></b></caption>
 							<thead class="thead-dark">
 								<tr>
 									<th scope="col">Petición</th>

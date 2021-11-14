@@ -8,7 +8,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	<link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+
+
 	<link href="plugins/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+	
+
+
 	<link href="plugins/css/style.css" rel="stylesheet" type="text/css"/>
 	<link href="plugins/style.css" rel="stylesheet" type="text/css"/>
 	<link href="plugins/toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
@@ -19,24 +25,29 @@
 	</style>
 </head>	
 <body>
-	<div class="topbar navbar-fixed-top">
+	<div class="topbar navbar-fixed-top bg-primary">
 		<a class="topbar-logo" href="Simulador.html">
 			<img src="plugins/img/logo2.png" alt="Logo">
 		</a>
-		<a class="topbar-link" data-hint="tooltip" data-original-title="Keenthemes Developer Blog" data-placement="bottom" href="Simulador.html" role="button">Simulador</a>
+	
 		<span class="topbar-sep"></span>
-		<a class="topbar-link" data-hint="tooltip" data-original-title="Keenthemes Developer Blog" data-placement="bottom" href="busquedas.html" role="button">Busquedas</a>
+		<a class="topbar-link" data-hint="tooltip" data-original-title="Keenthemes Developer Blog" data-placement="bottom" href="busquedas.html" role="button">Simulador</a>
 		<span class="topbar-sep"></span>
 	</div>
 
-	<div class="banner">
+
+
+<div class="widget-banner ">		
 		<div class="container">
-			<div class="col-md-6">	
+
+
+			<div class="col-md-12 margin-bottom-30">	
+				<div class="widget-body">
 				<form method="post" class="form-horizontal" id="form_pet">
 					<div class="form-group">
 						<label class="col-md-4 control-label">N° inicial</label>
 						<div class="col-md-8">	
-							<div class="input-group col-md-12">
+							<div class="input-group col-md-6">
 								<input type="text" class="form-control" id="txtResultado" name="digits" pattern="[0-9]" maxlength="6"></div>
 							</div>
 							<div id="spanError"></div>
@@ -113,7 +124,7 @@
 								<div class="input-group ">				   
 									<input type="text" class="form-control" id="txtValor" name="digits" required  pattern="[0-9]">		
 									<span class="input-group-btn">
-										<input type="button"  onclick="validar();" value="Go" class="btn btn-primary" id="btnGo">
+										<input type="button"  onclick="validar();" value="Go" class="btn btn-success" id="btnGo">
 									</span>
 
 								</div>
@@ -121,21 +132,37 @@
 							</div>
 						</div>
 
-						<input type="button" value="Realizar nuevo cálculo" onClick="location.reload();" style="width: 200px; height: 30px; background: #6699FF; color: #ffffff; cursor: pointer; border: 0px;"/>
+						<input type="button" class="btn btn-success" value="Realizar nuevo cálculo" onClick="location.reload();"/>
 						
 						
 					</form>
-				</div>
-				<div class="col-md-6">
-					<div class="pull-right">
+
+		
+				<div class="col-md-12">
+					<div id="caja">					  
+
+					</div>
+				</div><br>
+			</div>		
+		</div>
+
+
+
+<div class="widget-banner ">		
+		<div class="container">
+<div class="col-md-6 margin-bottom-30">
+	<div class="div-1">
+				<div class="btn-group " >
+				
+					<div class="pull-right ">
 						<div class="btn-group">
 							<button class="btn btn-default "onclick="mover()" id="btnPlay"><span class="fa fa-play"></span>   Play</button>
 							<button class="btn btn-default"onclick="detener()" ><span class="fa fa-stop"></span>   Stop</button><br><br>
 						</div>   
-					</div><br><br>
-
+				
 					<div class="clase_canvas">
 						<canvas id="disco" width="600" height="400" class="prueba"></canvas>
+
 						<canvas id="disco_disco" class="prueba" width="400" height="400">
 							Tu navegador no soporta canvas
 						</canvas>
@@ -146,24 +173,32 @@
 
 
 				</div>
-				<br><br><br><br><br><br><br><br>  <br><br><br><br><br><br><br><br>		  
-				<div class="col-md-12">
-					<div id="caja">					  
-
-					</div>
-				</div><br>
+				<br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
 			</div>
+	</div>
+</div>
 
-		</div>
+
+<div class="col-md-6 margin-bottom-30">
+	<div class="fondo">
+				<div class="btn-group " >
+				
 
 
-		<div class="widget-banner">
-			<div class="container">
+				</div>
+				<br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+	</div>
+</div>
+
+
+
 				<div class="row">
 					<div class="col-md-6 margin-bottom-30">
 						<div class="widget-body">
 							<div class="widget-layout">
-								<h3 class="widget-title" id="agregarSpan">Algoritmo <span class="widget-subtitle" id="span" name="span">FCFS</span></h3>
+								<h3 class="widget-title" id="agregarSpan">Algoritmo <span id="span" name="span">FCFS</span></h3>
 								<div class="panel panel-default" id="tabla">
 									
 									
@@ -182,13 +217,19 @@
 
 								</div>
 							</div>
-							<br>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
 						</div>
+
 					</div>
 					<div class="col-md-6 margin-bottom-30">
 						<div class="widget-body">
 							<div class="widget-layout">
-								<h3 class="widget-title">Maps- <span class="widget-subtitle">Grafico de peticiones</span></h3>
+								<h3><span>Grafico de peticiones</span></h3>
 								<div class="page-wrapper">
 									<div class="row">
 										<div class="col-md-12">
@@ -202,9 +243,15 @@
 										</div>
 									</div>
 								</div>
+								<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
 							</div>
-						</div></div>
-					</div>	</div></div>
+						</div>
+
+					</div>
+					</div></div>
 					<div class="modal" id="modal_basic" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
@@ -221,7 +268,9 @@
 							</div>
 						</div>
 					</div>
-					<!-- BEGIN CORE PLUGINS -->
+
+
+								<!-- BEGIN CORE PLUGINS -->
 
 					<script src="plugins/js/jquery-1.11.0.min.js" type="text/javascript"></script>
 					<script src="plugins/js/bootstrap.min.js" type="text/javascript"></script>

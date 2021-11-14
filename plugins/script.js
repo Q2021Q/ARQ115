@@ -36,7 +36,7 @@ var pet2 =document.getElementById("txtPet2").value;
 tiempoRot = ((1/velocidadRot)/sectXPista)*(Math.pow(10,3));
 tiempoRot = tiempoRot.toFixed(2);
 //alert("El tiempo Rotacional es: "+tiempoRot);
-document.getElementById("tiempoRotacional").innerHTML = 'El tiempo rotacional es: '+tiempoRot+' ms';
+document.getElementById("tiempoRotacional").innerHTML = tiempoRot +' ms';
 
 	//Operaciones para la Primera Peticion
 	res1 = pet1%(sectXPista*platos*2);
@@ -90,12 +90,12 @@ function tiempoTotalBusq(){
 		var tiempoDeCil = difCilindros * tiempoBusq;
 		tiempoDeCil = tiempoDeCil.toFixed(2);
 		//alert("Tiempo de Cilindros: "+tiempoDeCil);
-		document.getElementById("tiempoRotacional2").innerHTML = 'El tiempo de cilindros: '+tiempoDeCil+' ms';
+		document.getElementById("tiempoRotacional2").innerHTML = tiempoDeCil +' ms';
 		sectoresRecorridos = tiempoDeCil/(tiempoRot);
 		sectoresRecorridos = sectoresRecorridos.toFixed();
 
 		//alert("Sectores Recorridos: "+sectoresRecorridos);
-		document.getElementById("tiempoRotacional3").innerHTML = 'La cantidad de sectores recorridos es: '+sectoresRecorridos+' sectores';
+		document.getElementById("tiempoRotacional3").innerHTML = sectoresRecorridos+ ' sectores';
 		var desp=recursividad(sectoresRecorridos);
 
 		if(((sec1+desp)< sectXPista)&&((sec1+desp)>sec2)){
@@ -108,10 +108,10 @@ function tiempoTotalBusq(){
 		}
 
 		//alert("Tiempo de Sectores: "+tiempoDeSec);
-		document.getElementById("tiempoRotacional4").innerHTML = 'Tiempo de sectores es: '+tiempoDeSec+' ms';
+		document.getElementById("tiempoRotacional4").innerHTML = tiempoDeSec +' ms';
 		var tiempoTotBusq = (tiempoDeSec + (difCilindros * tiempoBusq));
 		//alert("Tiempo Total: "+tiempoTotBusq);
-		document.getElementById("tiempoRotacional5").innerHTML = '<h3>Tiempo total de búsqueda: '+tiempoTotBusq+' ms</h3>';
+		document.getElementById("tiempoRotacional5").innerHTML = tiempoTotBusq + ' ms';
 	}//fin else
 }
 
